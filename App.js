@@ -1,7 +1,5 @@
 //This app uses JQuery to import the JSON data. 
 
-
-
 //create DOM element to output to html.
 const date = document.querySelector('.date');
 const fact = document.querySelector('.fact');
@@ -9,6 +7,8 @@ const fact = document.querySelector('.fact');
 var month;  //month part of the date from the input in the form.
 var day;    //day part of the date from the input in the form.
 var originalDateFormat;
+var randomNum;
+
 const months = ["January", "February", "March", "April", "May", 
                 "June", "July", "August", "September", "October",
                  "November", "December"];
@@ -27,6 +27,9 @@ function handleSubmission(e){
   //get date from the form.
   originalDateFormat = myForm.day.value;
   findDayMonth(originalDateFormat);
+  
+//random number 1-10;
+  randomNum = Math.floor(Math.random()*10);
 
   //make new url with chosen date.
   var linkToAPI = "https://history.muffinlabs.com/date/" + month +"/"+ day;
@@ -50,13 +53,12 @@ function findDayMonth(originalDateFormat) {
 }
 
 
-
 // load API for fact on date and put into fact variable.
 function handleJSON(data) {
 
-  let myFact = data.data.Events[1].text;
+  let myFact = data.data.Events[randomNum].text;
   let myMonth = months[month-1];
-  date.innerHTML =  myMonth + " " + day + ", in the year " + data.data.Events[1].year;
+  date.innerHTML =  myMonth + " " + day + ", in the year " + data.data.Events[randomNum].year;
   fact.innerHTML = myFact;
 };
 
