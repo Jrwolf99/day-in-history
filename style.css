@@ -63,6 +63,9 @@ p {
     margin: 18px;
     font-style: italic;
 }
+.fact {
+    margin: 50px;
+}
 
 .submit-button{
     color: #0e1624;
