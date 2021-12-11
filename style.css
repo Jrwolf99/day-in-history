@@ -18,8 +18,8 @@ body{
     border-radius: 50px;
     margin: 20px;
     box-shadow: 3px 3px 10px gray;
-    height: 80vh;
-    width: 90vw;
+    height: cover;
+    width: 70%;
 }
 
 header{
